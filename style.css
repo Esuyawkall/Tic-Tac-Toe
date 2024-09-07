@@ -25,6 +25,7 @@ body {
     cursor: pointer;
     background-color: #e6e6fa	;
     color: black;
+    border-radius: 5px;
 }
 .status {
     margin-top: 20px;
@@ -33,6 +34,7 @@ body {
 }
 .restart {
     margin-top: 10px;
+    margin-left: 3.8vw;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;

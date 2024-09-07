@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         player_X.push(num);
         console.log(player_X);
         status.innerHTML="Player Y's turn";
+        const allDisabled = Array.from(buttons).every(button => button.disabled);
         for(x=0;x<8;x++){
             let isSubset = winning_combo[x].every(elem => player_X.includes(elem));
             if(isSubset){
@@ -37,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 status.innerHTML="Player X wins";
                 endGame();
             }
-            else{}
-            
+            else if(allDisabled){
+                status.innerHTML="Draw";
+            }
         }
        }
         else{
@@ -57,14 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     status.innerHTML="Player Y wins";
                     endGame();
                 }
-                else if(!isSubset){
-                    status.innerHTML="Draw";
-
-                }
+                else{}
             }
        }
-    //    button.disabled=true;
-
     })   
     });
     restart.addEventListener('click',()=>{
